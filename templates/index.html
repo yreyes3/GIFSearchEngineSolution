@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Flask Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>GIF Finder</h1>
+        <form>
+            <input type="text" name="search" placeholder="Enter your search..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
