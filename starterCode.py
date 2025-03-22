@@ -11,4 +11,5 @@ app = Flask(__name__)
 # Tell Flask that when someone visits the homepage ("/"), run the following function
 @app.route("/")
 def home():
-    return render_template("index.html")
+    my_message = "Welcome to Flask Basics!"  # Define a Python variable
+    return render_template("index.html", message=my_message)  # Pass to HTML
