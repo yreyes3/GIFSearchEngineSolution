@@ -2,15 +2,26 @@
 <html lang="en">
 <head>
     <title>My Flask Website</title>
+    <!-- Link to the CSS file stored in the "static" folder -->
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
+         <!-- Page Title -->
         <h1>GIF Finder</h1>
-        <form>
+
+        <!-- Search Form -->
+        <form method="POST">
             <input type="text" name="search" placeholder="Enter your search..." required>
             <button type="submit">Search</button>
         </form>
+
+        <!-- Display GIFs below the search box -->
+        <div class="gif-container">
+            {% for gif in gif_urls %}  <!-- Loop through the list of GIF URLs -->
+                <img src="{{ gif }}" alt="GIF">  <!-- Display each GIF -->
+            {% endfor %}
+        </div>
     </div>
 </body>
 </html>
